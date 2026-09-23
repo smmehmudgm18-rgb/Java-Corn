@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Java Corn</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+
+<!-- Firebase SDK (compat version - সহজে <script> ট্যাগে ব্যবহারযোগ্য) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+<nav id="mainNav" class="main-nav">
+  <a href="/" data-link class="nav-logo">Java<span>Corn</span></a>
+  <div class="nav-links">
+    <a href="/" data-link>Home</a>
+    <a href="/videos" data-link>Videos</a>
+    <a href="/series" data-link>Series</a>
+    <a href="/login" data-link id="navLoginLink">Admin</a>
+  </div>
+</nav>
+
+<main id="app"></main>
+
+<footer class="main-footer">
+  <p>© Java Corn — সব কন্টেন্ট নিজস্ব</p>
+</footer>
+
+<script src="js/firebaseConfig.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/db.js"></script>
+<script src="js/router.js"></script>
+<script src="js/views/home.js"></script>
+<script src="js/views/videos.js"></script>
+<script src="js/views/series.js"></script>
+<script src="js/views/watch.js"></script>
+<script src="js/views/login.js"></script>
+<script src="js/views/admin.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
