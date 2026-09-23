@@ -1,0 +1,72 @@
+.admin-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+.admin-tab {
+  padding: 10px 16px;
+  cursor: pointer;
+  color: var(--text-dim);
+}
+.admin-tab.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.admin-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.admin-list-item .item-info { font-size: 0.9rem; }
+.admin-list-item .item-actions { display: flex; gap: 6px; }
+
+.tag-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tag-checklist label {
+  background: var(--panel);
+  border: 1px solid #333;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.season-builder {
+  border: 1px dashed #444;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+.episode-builder {
+  background: #22222e;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.episode-builder .form-group { margin-bottom: 8px; }
+
+.login-box {
+  max-width: 360px;
+  margin: 60px auto;
+  background: var(--panel);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.admin-guard-msg {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
