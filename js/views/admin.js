@@ -1,3 +1,12 @@
+// ভিডিও ক্যাটাগরি লিস্ট (এখানে ক্যাটাগরিগুলো ডিফাইন করা হলো)
+const VIDEO_CATEGORIES = [
+  "Tech",
+  "Vlog",
+  "Tutorial",
+  "Entertainment",
+  "Education"
+];
+
 // 🛠 Admin Panel — Videos, Series, Tags — সব ম্যানেজমেন্ট এখানে
 
 const AdminView = {
@@ -132,9 +141,6 @@ const AdminView = {
     if (editing && this.seasonBuilderData.length === 0) {
       this.seasonBuilderData = JSON.parse(JSON.stringify(editing.seasons || []));
     }
-    if (!editing && this._lastTab !== "series-new") {
-      // নতুন ফর্মে গেলে বিল্ডার খালি রাখা (শুধু প্রথমবার)
-    }
     this._lastTab = editing ? "series-edit" : "series-new";
 
     content.innerHTML = `
@@ -256,7 +262,6 @@ const AdminView = {
       </div>
     `).join("") || '<p class="empty-msg">এখনো কোনো সিজন যোগ করা হয়নি।</p>';
 
-    // ইনপুট চেঞ্জ হলে ডেটা সিঙ্ক
     area.querySelectorAll(".seasonNumInput").forEach(inp => {
       inp.addEventListener("input", () => {
         this.seasonBuilderData[inp.dataset.sidx].seasonNumber = parseInt(inp.value) || 0;
