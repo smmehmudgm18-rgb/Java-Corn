@@ -1,0 +1,175 @@
+:root {
+  --bg: #0e0e14;
+  --panel: #1a1a24;
+  --accent: #e50914;
+  --text: #f2f2f2;
+  --text-dim: #9a9aa5;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  min-height: 100%;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* Navbar */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  padding-top: calc(14px + env(safe-area-inset-top, 0px));
+  background: var(--panel);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nav-logo { font-size: 1.3rem; font-weight: bold; }
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 18px; font-size: 0.95rem; }
+.nav-links a:hover { color: var(--accent); }
+
+#app {
+  min-height: 70vh;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.main-footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* Grids */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.card {
+  background: var(--panel);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.card:hover { transform: scale(1.03); }
+.card img, .card .thumb-fallback {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  background: #2a2a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+.card .card-body { padding: 8px 10px; }
+.card .card-title { font-size: 0.9rem; font-weight: bold; }
+.card .card-meta { font-size: 0.75rem; color: var(--text-dim); margin-top: 4px; }
+.pro-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+/* Section headers */
+.section-title {
+  font-size: 1.2rem;
+  margin: 24px 0 8px;
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+}
+
+/* Filters */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+.filter-bar select, .filter-bar input[type="text"] {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid #333;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.tag-chip {
+  background: var(--panel);
+  border: 1px solid #333;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.tag-chip.active { border-color: var(--accent); color: var(--accent); }
+
+/* Watch page */
+.watch-player {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.watch-player iframe { width: 100%; height: 100%; border: none; }
+.watch-title { font-size: 1.3rem; margin-top: 16px; }
+.watch-meta { color: var(--text-dim); margin-top: 6px; font-size: 0.9rem; }
+.watch-tags { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* Series detail */
+.season-block { margin-top: 18px; }
+.season-title { font-weight: bold; color: var(--accent); margin-bottom: 8px; }
+.episode-row {
+  display: flex;
+  justify-content: space-between;
+  background: var(--panel);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+.episode-row:hover { background: #24243a; }
+
+/* Forms (shared with admin) */
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; margin-bottom: 6px; font-size: 0.9rem; color: var(--text-dim); }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: var(--panel);
+  color: var(--text);
+}
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.btn-secondary { background: #333; }
+.btn-small { padding: 5px 10px; font-size: 0.8rem; }
+
+.empty-msg { color: var(--text-dim); margin-top: 20px; text-align: center; }
+.loading-msg { color: var(--text-dim); text-align: center; padding: 30px; }
