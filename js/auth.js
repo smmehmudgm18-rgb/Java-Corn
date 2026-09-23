@@ -4,7 +4,8 @@ const Auth = {
   currentUser: null,
 
   init(onReady) {
-    authInstance.onAuthStateChanged((user) => {
+    // authInstance এর পরিবর্তে সরাসরি firebase.auth() ব্যবহার করা হলো
+    firebase.auth().onAuthStateChanged((user) => {
       this.currentUser = user;
       this.updateNavUI();
       if (onReady) onReady(user);
@@ -12,11 +13,11 @@ const Auth = {
   },
 
   login(email, password) {
-    return authInstance.signInWithEmailAndPassword(email, password);
+    return firebase.auth().signInWithEmailAndPassword(email, password);
   },
 
   logout() {
-    return authInstance.signOut();
+    return firebase.auth().signOut();
   },
 
   isLoggedIn() {
@@ -26,7 +27,7 @@ const Auth = {
   updateNavUI() {
     const link = document.getElementById("navLoginLink");
     if (!link) return;
-    link.textContent = this.isLoggedIn() ? "Admin Panel" : "Admin";
+    link.textContent = this.isLoggedIn() /* tora */ ? "Admin Panel" : "Admin";
     link.setAttribute("href", this.isLoggedIn() ? "/admin" : "/login");
   }
 };
